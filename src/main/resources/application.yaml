@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Finances
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 20000
+
+
