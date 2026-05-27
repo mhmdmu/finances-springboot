@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS accounts (
     id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
-    type VARCHAR(20) NOT NULL CHECK (type IN ('cash', 'bank', 'credit'))
+    type VARCHAR(20) NOT NULL CHECK (type IN ('cash', 'bank', 'credit')),
     name VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT fk_users
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS transactions (
     id SERIAL PRIMARY KEY,
     account_id INT NOT NULL,
     category_id INT NOT NULL DEFAULT 1,
-    type VARCHAR(20) NOT NULL CHECK (type IN ('income', 'expense'))
+    type VARCHAR(20) NOT NULL CHECK (type IN ('income', 'expense')),
     amount DECIMAL(12,2) NOT NULL CHECK (amount > 0),
     transaction_date DATE NOT NULL,
     note TEXT,
