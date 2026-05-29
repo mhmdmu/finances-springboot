@@ -12,4 +12,11 @@ spring:
     init:
       mode: always
 
+server:
+  servlet:
+    context-path: /api/v1
 
+auth:
+  jwt:
+    secret-key: ${JWT_KEY}
+    expiration-seconds: 900 # 15 minuets

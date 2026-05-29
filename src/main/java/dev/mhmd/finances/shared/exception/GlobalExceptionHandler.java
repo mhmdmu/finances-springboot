@@ -21,7 +21,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ApiResponse<Void>> handleGeneric(Exception e) {
         return ResponseEntity
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body(ApiResponse.error("Internal server error: " + e.getMessage()));
+                .body(ApiResponse.error("Internal server error"));
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
